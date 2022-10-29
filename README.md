@@ -24,58 +24,41 @@ Developed by: Varsha Ajith
 RegisterNumber:  212221230118
 
 ```
-import matplotlib.pyplot as plt ## library for display the graph
-x = [5,6,3,2,6,7,1,2]
-y = [2,3,6,5,8,3,5,8]
-plt.scatter(x,y) #scatter plot function
-plt.plot(x,y) # to map the dot using line 
-plt.show() # to display the plot
-from sys import base_prefix
-import numpy as np
 import matplotlib.pyplot as plt
-
-# assign values in array
-
-X = np.array([0,1,2,3,4,5,6,7,8,9])
-Y = np.array([1,3,2,5,7,8,8,9,10,12])
-
-# to find the mean values of X and Y
-
-X_mean = np.mean(X)
-print(X_mean)
-Y_mean = np.mean(Y)
-print(Y_mean)
-
-# To Find The Summation
-
-num = 0
-denum = 0
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-
-# To find the slope for least square method
-
-m=num/denum
-
-  # To find the Y intercept 
-
-b=Y_mean-m*(X_mean)
-print(m,b)
-
-#equation of the line 
-Y_pred = m*X+b
-print(Y_pred)
-
-#plot graph
-plt.scatter(X,Y,color='blue')
-plt.plot(X,Y_pred,color='orange')
+x=[5,6,3,2,6,7,1,2]
+y=[2,3,6,5,8,3,5,8]
+plt.scatter(x,y)
 plt.show()
 
+## Least Square Method
+
+import numpy as np
+import matplotlib.pyplot as plt
+X=np.array([0,1,2,3,4,5,6,7,8,9])
+Y=np.array([1,3,2,5,7,8,8,9,10,12])
+ #mean 
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(y)
+print(Y_mean)
+num=0
+denum=0
+for i in range(len(x)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(x[i]-X_mean)**2
+m=num/denum
+b=Y_mean-m*X_mean
+print(m,b)
+Y_pred=m*X+b
+print("y pred:",Y_pred)
+plt.scatter(X,Y)
+plt.plot(X,Y_pred,color='pink')
+plt.show()
 ```
 ## Output:
-![best fit line](p1.png)
-![best fit line](p2.png)
+![m4](https://user-images.githubusercontent.com/94222288/198822485-1333b271-3772-463e-b3f0-503005ead8e5.jpeg)
+![m3](https://user-images.githubusercontent.com/94222288/198822491-226d35aa-7890-4236-9f95-4c19a87ad34d.jpeg)
+
 
 
 
